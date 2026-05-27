@@ -1,0 +1,57 @@
+/*
+ * Copyright (C) 2026 Peter Jones
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Copy this file to src/ha_entities.h and replace the placeholder values with
+ * your actual Home Assistant entity IDs.
+ *
+ * Future: a config UI will overlay these values from NVS at boot, so hardcoded
+ * defines here act as compile-time fallbacks only. No NVS implementation yet.
+ */
+
+#pragma once
+
+/* Home tab — calendar */
+#define HA_ENTITY_CALENDAR   "your.calendar_entity"
+
+/* Home tab — weather and conditions */
+#define HA_ENTITY_WEATHER    "your.weather_entity"
+#define HA_ENTITY_POLLEN     "your.pollen_entity"
+#define HA_ENTITY_UV         "your.uv_entity"
+
+/* Home tab — climate */
+#define HA_ENTITY_HEATING          "your.heating_entity"
+#define HA_ENTITY_KITCHEN_TEMP     "your.kitchen_temp_entity"
+#define HA_ENTITY_KITCHEN_HUMIDITY "your.kitchen_humidity_entity"
+
+/* Presence */
+#define HA_ENTITY_PRESENCE         "your.presence_entity"
+
+/* Ambient condition icon */
+#define HA_ENTITY_CONDITION_ICON   "your.condition_icon_entity"
+
+/* Entertainment — confirm your entity IDs with HA MCP (Issue 09 process):
+ *   ha_search_entities domain=media_player, then ha_get_state on each result.
+ *
+ * If the HA Spotify integration is installed, each account gets its own
+ * media_player entity (e.g. "media_player.pete_spotify").
+ * If not installed, alias PETE and JUDE to your Sonos/speaker entity —
+ * Spotify will play via Spotify Connect on the speaker.
+ */
+#define HA_ENTITY_MEDIA_SONOS        "media_player.your_sonos_speaker"
+#define HA_ENTITY_MEDIA_PETE_SPOTIFY "media_player.pete_spotify"     /* or alias to Sonos */
+#define HA_ENTITY_MEDIA_JUDE_SPOTIFY "media_player.jude_spotify"     /* or alias to Sonos */

@@ -1,0 +1,34 @@
+/*
+ * ha_config.h — Home Assistant connection credentials.
+ *
+ * This file is git-ignored. Copy to src/ha_config.h and fill in your values
+ * before building.
+ *
+ * HA_HOST_DEFAULT  — Hostname or IP used on first boot (before NVS is written).
+ *                    "homeassistant.local" works if your router forwards .local
+ *                    queries; otherwise use a static IP.
+ * HA_PORT_DEFAULT  — Port number (almost always 8123).
+ * HA_TOKEN         — Long-lived access token.
+ *                    Generate one in HA: Profile -> Long-Lived Access Tokens ->
+ *                    Create Token.  Paste the full token (starts with "ey...").
+ * WIFI_SSID        — Wi-Fi network name (SSID).
+ * WIFI_PASSWORD    — WPA2 passphrase. Use "" for open networks.
+ *
+ * NVS key constants (HA_NVS_KEY_*) are shared with Issue 06 (credentials NVS).
+ * dashboard_config reads/writes NVS under these keys at runtime.
+ */
+#pragma once
+
+/* NVS key name constants — shared with Issue 06 (credentials NVS).
+ * These are the keys used in the "dashboard" NVS namespace. */
+#define HA_NVS_KEY_HOST    "ha_host"
+#define HA_NVS_KEY_PORT    "ha_port"
+#define HA_NVS_KEY_USE_TLS "ha_use_tls"
+#define HA_NVS_KEY_TOKEN   "ha_token"
+
+#define HA_HOST_DEFAULT  "homeassistant.local"
+#define HA_PORT_DEFAULT  8123
+#define HA_TOKEN         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+#define WIFI_SSID     "YourSSID"
+#define WIFI_PASSWORD "YourPassword"
